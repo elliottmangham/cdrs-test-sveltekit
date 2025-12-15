@@ -1,0 +1,156 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "image_left_steps_right",
+		"primary": {
+			"visual": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+					"width": 4076,
+					"height": 2712
+				},
+				"url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+				"width": 4076,
+				"height": 2712,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "movement",
+				"credits": null,
+				"__TYPE__": "ImageContent"
+			},
+			"main_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Stream",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"steps": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+										"width": 6597,
+										"height": 4398
+									},
+									"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+									"width": 6597,
+									"height": 4398,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "difficult",
+									"credits": null,
+									"__TYPE__": "ImageContent"
+								}
+							],
+							[
+								"step_title",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Fun"
+								}
+							],
+							[
+								"step_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Incididunt culpa cupidatat enim esse amet commodo do adipisicing irure dolore eu exercitation."
+											}
+										}
+									]
+								}
+							]
+						]
+					},
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"icon",
+								{
+									"__TYPE__": "ImageContent",
+									"provider": "imgix",
+									"url": "https://images.unsplash.com/photo-1610040855959-27944b04f12d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzY1NzgxMzk2fDA&ixlib=rb-4.1.0&q=85",
+									"alt": "orange fruit on brown wooden table",
+									"origin": {
+										"id": "agP9RgnWZAY",
+										"url": "https://images.unsplash.com/photo-1610040855959-27944b04f12d?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMzc0NjN8MHwxfHNlYXJjaHwxMnx8Y2l0cnVzJTIwZnJ1aXR8ZW58MHx8fHwxNzY1NzgxMzk2fDA&ixlib=rb-4.1.0&q=85",
+										"width": 5143,
+										"height": 4114
+									},
+									"width": 5143,
+									"height": 4114,
+									"edit": {
+										"background": "transparent",
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										}
+									}
+								}
+							],
+							[
+								"step_title",
+								{
+									"__TYPE__": "FieldContent",
+									"type": "Text",
+									"value": "Step 2"
+								}
+							],
+							[
+								"step_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+												"spans": []
+											},
+											"direction": "ltr"
+										}
+									]
+								}
+							]
+						],
+						"key": "d31db758-2f77-4e43-a847-74085e34aaab"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

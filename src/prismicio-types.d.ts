@@ -540,6 +540,106 @@ type QuoteSliceVariation = QuoteSliceDefault;
 export type QuoteSlice = prismic.SharedSlice<'quote', QuoteSliceVariation>;
 
 /**
+ * Item in *SideVisualSteps → Image Aside Steps → Primary → Steps*
+ */
+export interface SideVisualStepsSliceImageLeftStepsRightPrimaryStepsItem {
+	/**
+	 * Icon field in *SideVisualSteps → Image Aside Steps → Primary → Steps*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.steps[].icon
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	icon: prismic.ImageField<never>;
+
+	/**
+	 * Step Title field in *SideVisualSteps → Image Aside Steps → Primary → Steps*
+	 *
+	 * - **Field Type**: Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.steps[].step_title
+	 * - **Documentation**: https://prismic.io/docs/fields/text
+	 */
+	step_title: prismic.KeyTextField;
+
+	/**
+	 * Step Description field in *SideVisualSteps → Image Aside Steps → Primary → Steps*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.steps[].step_description
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	step_description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *SideVisualSteps → Image Aside Steps → Primary*
+ */
+export interface SideVisualStepsSliceImageLeftStepsRightPrimary {
+	/**
+	 * Visual field in *SideVisualSteps → Image Aside Steps → Primary*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.visual
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	visual: prismic.ImageField<never>;
+
+	/**
+	 * Main title field in *SideVisualSteps → Image Aside Steps → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.main_title
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	main_title: prismic.RichTextField;
+
+	/**
+	 * Steps field in *SideVisualSteps → Image Aside Steps → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: side_visual_steps.image_left_steps_right.primary.steps[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	steps: prismic.GroupField<Simplify<SideVisualStepsSliceImageLeftStepsRightPrimaryStepsItem>>;
+}
+
+/**
+ * Image Aside Steps variation for SideVisualSteps Slice
+ *
+ * - **API ID**: `image_left_steps_right`
+ * - **Description**: Visual/image on the left, step-by-step or feature list (with icons, titles, and description) on the right.
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SideVisualStepsSliceImageLeftStepsRight = prismic.SharedSliceVariation<
+	'image_left_steps_right',
+	Simplify<SideVisualStepsSliceImageLeftStepsRightPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *SideVisualSteps*
+ */
+type SideVisualStepsSliceVariation = SideVisualStepsSliceImageLeftStepsRight;
+
+/**
+ * SideVisualSteps Shared Slice
+ *
+ * - **API ID**: `side_visual_steps`
+ * - **Description**: *None*
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SideVisualStepsSlice = prismic.SharedSlice<
+	'side_visual_steps',
+	SideVisualStepsSliceVariation
+>;
+
+/**
  * Primary content in *Text → Default → Primary*
  */
 export interface TextSliceDefaultPrimary {
@@ -771,6 +871,11 @@ declare module '@prismicio/client' {
 			QuoteSliceDefaultPrimary,
 			QuoteSliceVariation,
 			QuoteSliceDefault,
+			SideVisualStepsSlice,
+			SideVisualStepsSliceImageLeftStepsRightPrimaryStepsItem,
+			SideVisualStepsSliceImageLeftStepsRightPrimary,
+			SideVisualStepsSliceVariation,
+			SideVisualStepsSliceImageLeftStepsRight,
 			TextSlice,
 			TextSliceDefaultPrimary,
 			TextSliceTwoColumnsPrimary,

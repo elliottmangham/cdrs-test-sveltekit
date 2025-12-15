@@ -1,0 +1,58 @@
+{
+  "type": "SharedSlice",
+  "id": "side_visual_steps",
+  "name": "SideVisualSteps",
+  "variations": [
+    {
+      "id": "image_left_steps_right",
+      "name": "Image Aside Steps",
+      "description": "Visual/image on the left, step-by-step or feature list (with icons, titles, and description) on the right.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "visual": {
+          "type": "Image",
+          "config": {
+            "label": "Visual"
+          }
+        },
+        "main_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Main title"
+          }
+        },
+        "steps": {
+          "type": "Group",
+          "config": {
+            "label": "Steps",
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "label": "Icon"
+                }
+              },
+              "step_title": {
+                "type": "Text",
+                "config": {
+                  "label": "Step Title"
+                }
+              },
+              "step_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph",
+                  "label": "Step Description"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
