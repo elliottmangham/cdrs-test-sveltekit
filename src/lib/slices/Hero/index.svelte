@@ -1,0 +1,42 @@
+<script lang="ts">
+	import { isFilled, type Content } from '@prismicio/client';
+	import { PrismicImage, PrismicLink, type SliceComponentProps } from '@prismicio/svelte';
+	import Bounded from '$lib/components/Bounded.svelte';
+	import PrismicRichText from '$lib/components/PrismicRichText.svelte';
+	import Heading from './Heading.svelte';
+
+	type Props = SliceComponentProps<Content.HeroSlice>;
+
+	const { slice }: Props = $props();
+</script>
+
+<section class="relative bg-slate-900 text-white">
+	{#if isFilled.image(slice.primary.backgroundImage)}
+		<PrismicImage
+			field={slice.primary.backgroundImage}
+			alt=""
+			class="absolute inset-0 h-full w-full pointer-events-none select-none object-cover opacity-40"
+		/>
+	{/if}
+	<Bounded tag="div" yPadding="lg" class="relative">
+		<div class="grid justify-items-center gap-8">
+			<div class="max-w-2xl text-center">
+				<PrismicRichText
+					field={slice.primary.text}
+					components={{
+						heading1: Heading
+					}}
+				/>
+			</div>
+			{#if isFilled.link(slice.primary.buttonLink)}
+				<PrismicLink
+					field={slice.primary.buttonLink}
+					class="rounded-sm bg-white px-5 py-3 font-medium text-slate-800"
+				>
+					{slice.primary.buttonText || 'Learn More'}
+				</PrismicLink>
+			{/if}
+			{slice.primary.textColor}
+		</div>
+	</Bounded>
+</section>
