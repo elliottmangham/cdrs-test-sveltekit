@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	import { repositoryName } from '$lib/prismicio';
 	import Header from '$lib/components/Header.svelte';
+	import PageTransition from '$lib/components/PageTransition.svelte';
 	import type { LayoutProps } from './$types';
 
 	const { data, children }: LayoutProps = $props();
@@ -24,6 +25,8 @@
 </svelte:head>
 <div class="text-slate-800">
 	<Header navigation={data.navigation} settings={data.settings} />
-	<main>{@render children()}</main>
+	<PageTransition pathname={page.url.pathname}>
+		<main>{@render children()}</main>
+	</PageTransition>
 </div>
 <PrismicPreview {repositoryName} />
