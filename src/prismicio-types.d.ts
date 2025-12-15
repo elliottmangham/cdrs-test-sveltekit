@@ -114,12 +114,14 @@ export type NavigationDocument<Lang extends string = string> = prismic.PrismicDo
 >;
 
 type PageDocumentDataSlicesSlice =
+	| CustomerLogosSlice
 	| HeroSlice
 	| QuoteSlice
 	| TextSlice
 	| ImageSlice
 	| ImageCardsSlice
-	| TextWithImageSlice;
+	| TextWithImageSlice
+	| SideVisualStepsSlice;
 
 /**
  * Content for Page documents
@@ -237,6 +239,93 @@ export type SettingsDocument<Lang extends string = string> = prismic.PrismicDocu
 >;
 
 export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+
+/**
+ * Item in *CustomerLogos → Default → Primary → logos*
+ */
+export interface CustomerLogosSliceDefaultPrimaryLogosItem {
+	/**
+	 * image field in *CustomerLogos → Default → Primary → logos*
+	 *
+	 * - **Field Type**: Image
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: customer_logos.default.primary.logos[].image
+	 * - **Documentation**: https://prismic.io/docs/fields/image
+	 */
+	image: prismic.ImageField<never>;
+
+	/**
+	 * link field in *CustomerLogos → Default → Primary → logos*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: customer_logos.default.primary.logos[].link
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *CustomerLogos → Default → Primary*
+ */
+export interface CustomerLogosSliceDefaultPrimary {
+	/**
+	 * eyebrowHeadline field in *CustomerLogos → Default → Primary*
+	 *
+	 * - **Field Type**: Rich Text
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: customer_logos.default.primary.eyebrowHeadline
+	 * - **Documentation**: https://prismic.io/docs/fields/rich-text
+	 */
+	eyebrowHeadline: prismic.RichTextField;
+
+	/**
+	 * callToActionLink field in *CustomerLogos → Default → Primary*
+	 *
+	 * - **Field Type**: Link
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: customer_logos.default.primary.callToActionLink
+	 * - **Documentation**: https://prismic.io/docs/fields/link
+	 */
+	callToActionLink: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+	/**
+	 * logos field in *CustomerLogos → Default → Primary*
+	 *
+	 * - **Field Type**: Group
+	 * - **Placeholder**: *None*
+	 * - **API ID Path**: customer_logos.default.primary.logos[]
+	 * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+	 */
+	logos: prismic.GroupField<Simplify<CustomerLogosSliceDefaultPrimaryLogosItem>>;
+}
+
+/**
+ * Default variation for CustomerLogos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CustomerLogosSliceDefault = prismic.SharedSliceVariation<
+	'default',
+	Simplify<CustomerLogosSliceDefaultPrimary>,
+	never
+>;
+
+/**
+ * Slice variation for *CustomerLogos*
+ */
+type CustomerLogosSliceVariation = CustomerLogosSliceDefault;
+
+/**
+ * CustomerLogos Shared Slice
+ *
+ * - **API ID**: `customer_logos`
+ * - **Description**: CustomerLogos
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type CustomerLogosSlice = prismic.SharedSlice<'customer_logos', CustomerLogosSliceVariation>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -852,6 +941,11 @@ declare module '@prismicio/client' {
 			SettingsDocument,
 			SettingsDocumentData,
 			AllDocumentTypes,
+			CustomerLogosSlice,
+			CustomerLogosSliceDefaultPrimaryLogosItem,
+			CustomerLogosSliceDefaultPrimary,
+			CustomerLogosSliceVariation,
+			CustomerLogosSliceDefault,
 			HeroSlice,
 			HeroSliceDefaultPrimary,
 			HeroSliceVariation,

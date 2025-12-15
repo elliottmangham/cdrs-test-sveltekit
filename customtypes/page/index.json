@@ -35,6 +35,9 @@
 				"fieldset": "Slice Zone",
 				"config": {
 					"choices": {
+						"customer_logos": {
+							"type": "SharedSlice"
+						},
 						"hero": {
 							"type": "SharedSlice"
 						},
@@ -51,6 +54,9 @@
 							"type": "SharedSlice"
 						},
 						"text_with_image": {
+							"type": "SharedSlice"
+						},
+						"side_visual_steps": {
 							"type": "SharedSlice"
 						}
 					}
